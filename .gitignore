@@ -1,0 +1,5 @@
+.DS_Store
+*.zip
+_ref/
+_to_delete/
+__pycache__/

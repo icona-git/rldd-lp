@@ -1,0 +1,120 @@
+{
+  "firm": "Ross Lutz Dunn & Deshaye LLP",
+  "firm_short": "Ross Lutz Dunn & Deshaye",
+  "domain": "rldd.icona.ca",
+  "slug": "calgary",
+  "region": "calgary",
+  "practice": "criminal-defence",
+  "phone_display": "(403) 264-8484",
+  "phone_tel": "+14032648484",
+  "address": "#1800, 736 – 6th Avenue SW, Calgary, AB T2P 3T7",
+  "title": "Criminal Defence Lawyers in Calgary | Ross Lutz Dunn & Deshaye LLP",
+  "description": "Charged with a criminal offence in Calgary? Ross Lutz Dunn & Deshaye LLP defends sexual assault, domestic assault and fraud charges. Request a confidential consultation.",
+  "social_title": "Criminal Defence Lawyers in Calgary",
+  "social_description": "Ross Lutz Dunn & Deshaye LLP. Request a confidential consultation.",
+  "hero_label": "Calgary Criminal Defence",
+  "h1": "Criminal Defence Lawyers in Calgary",
+  "stat_label": "Courtroom Experience",
+  "stat_value": "170+ Years",
+  "hero_sub": "Ross Lutz Dunn & Deshaye LLP defends people charged with criminal offences in Calgary and across Alberta, including sexual assault, domestic assault and fraud.",
+  "hero_points": [
+    "Eight criminal defence lawyers",
+    "Two King's Counsel",
+    "Trial and appeal counsel"
+  ],
+  "form_title": "Request a Confidential Consultation",
+  "form_intro": "Tell us briefly what has happened. If your matter is urgent, such as a detention, a bail hearing or an upcoming court date, say so at the start.",
+  "form_button": "Send My Request",
+  "consent": "I understand that sending this form does not create a lawyer-client relationship.",
+  "form_fine": "All inquiries are treated as confidential. Please do not include details you would not want read by someone other than a lawyer at our firm.",
+  "photo_alt": "Partners of Ross Lutz Dunn & Deshaye LLP in downtown Calgary",
+  "offences_label": "What We Defend",
+  "offences_title": "Charges We Act On",
+  "offences_intro": "Our lawyers act across the full range of Criminal Code matters. These are three of the most common reasons people call us.",
+  "offences": [
+    {
+      "title": "Sexual Assault",
+      "body": "Allegations of sexual assault and related offences carry serious consequences and their own rules of evidence and procedure. We review the disclosure closely, identify the evidentiary and Charter issues early, and prepare the case for trial."
+    },
+    {
+      "title": "Domestic Assault",
+      "body": "A domestic assault charge usually arrives with release conditions, often including no contact with a partner and not returning home. We deal with the bail conditions as well as the charge itself."
+    },
+    {
+      "title": "Fraud and Financial Offences",
+      "body": "Fraud, breach of trust and other financial allegations often turn on large volumes of records. We work through the documents and the disclosure and build a defence around what the evidence can and cannot prove."
+    }
+  ],
+  "steps_label": "What Happens Next",
+  "steps_title": "From First Call to a Plan",
+  "steps": [
+    {
+      "title": "Contact us",
+      "body": "Call or send the form. Tell us right away if someone is in custody or a court date is close."
+    },
+    {
+      "title": "Confidential consultation",
+      "body": "You speak with a criminal defence lawyer about the charge, the release conditions and what has happened so far."
+    },
+    {
+      "title": "Your options",
+      "body": "We explain the process ahead and the options open to you, so you can decide how to proceed."
+    }
+  ],
+  "team_label": "Our Counsel",
+  "team_title": "The Lawyers of Ross Lutz Dunn & Deshaye",
+  "team_intro": "A criminal defence firm built for the courtroom, in downtown Calgary.",
+  "team": [
+    {
+      "slug": "kim-ross",
+      "name": "L. Kim Ross, K.C.",
+      "role": "Partner, King's Counsel"
+    },
+    {
+      "slug": "jim-lutz",
+      "name": "Jim Lutz, K.C.",
+      "role": "Partner, King's Counsel"
+    },
+    {
+      "slug": "greg-dunn",
+      "name": "Greg Dunn",
+      "role": "Partner"
+    },
+    {
+      "slug": "matthew-deshaye",
+      "name": "Matthew Deshaye",
+      "role": "Partner"
+    },
+    {
+      "slug": "tyson-dahlem",
+      "name": "Tyson Dahlem",
+      "role": "Lawyer"
+    },
+    {
+      "slug": "joel-chevrefils",
+      "name": "Joel Chevrefils",
+      "role": "Lawyer"
+    },
+    {
+      "slug": "vince-semenuk",
+      "name": "Vince Semenuk",
+      "role": "Lawyer"
+    },
+    {
+      "slug": "josh-labbe",
+      "name": "Josh l'Abbé",
+      "role": "Lawyer"
+    },
+    {
+      "slug": "matt-lutz",
+      "name": "Matt Lutz",
+      "role": "Law Student"
+    }
+  ],
+  "cta_title": "Speak With a Criminal Defence Lawyer",
+  "cta_body": "Consultations are confidential. Call us, or send the form and we will be in touch.",
+  "footer_disclaimer": "The information on this page does not constitute legal advice. Contacting the firm or sending information through this page does not create a lawyer-client relationship.",
+  "thanks_title": "Thank you. Your request has been received.",
+  "thanks_body": "A member of our team will review your message and be in touch shortly.",
+  "thanks_urgent": "If your matter is urgent, you can reach us right away:"
+}
