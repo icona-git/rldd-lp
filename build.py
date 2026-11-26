@@ -142,7 +142,7 @@ def page():
                 '<input type="hidden" name="region" value="%s">'
                 '<input type="hidden" name="utm_source"><input type="hidden" name="utm_medium">'
                 '<input type="hidden" name="utm_campaign"><input type="hidden" name="gclid">'
-                '<div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>'
+                '<div class="hp" aria-hidden="true"><input type="text" name="lp_ref_k7" value="" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore data-form-type="other"></div>'
                 '<div><label for="%s-name">Name</label><input type="text" id="%s-name" name="name" required autocomplete="name"></div>'
                 '<div class="row"><div><label for="%s-email">Email</label><input type="email" id="%s-email" name="email" required autocomplete="email"></div>'
                 '<div><label for="%s-phone">Phone</label><input type="tel" id="%s-phone" name="phone" required autocomplete="tel"></div></div>'

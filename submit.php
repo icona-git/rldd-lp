@@ -33,8 +33,18 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405); header('Allow: POST'); exit('Method not allowed.');
 }
 
-// Honeypot: real people leave `website` blank; bots fill it. Silently drop.
-if (!empty($_POST['website'] ?? '')) { header('Location: /thank-you.html'); exit; }
+// Refuse to run if the lead inbox is not a real address, so a lead is never silently lost.
+foreach (explode(',', MAIL_TO) as $lp_to) {
+    if (!filter_var(trim($lp_to), FILTER_VALIDATE_EMAIL)) {
+        error_log('[RLDD form] MAIL_TO is not a valid email address. Check private/config.php.');
+        http_response_code(500);
+        header('Content-Type: text/plain; charset=utf-8');
+        exit("Sorry — we couldn't submit your request right now. Please call (403) 264-8484.");
+    }
+}
+
+// Honeypot: real people leave this hidden field blank; bots fill it. Silently drop.
+if (!empty($_POST['lp_ref_k7'] ?? '')) { error_log('[RLDD form] Honeypot filled; submission dropped.'); header('Location: /thank-you.html'); exit; }
 
 $name    = lp_clean($_POST['name']    ?? '', 120);
 $email   = lp_clean($_POST['email']   ?? '', 160);
