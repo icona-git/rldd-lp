@@ -84,6 +84,7 @@ input:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px;bord
 form .btn{width:100%;margin-top:.25rem}
 .fine{font-size:.78rem;color:var(--mid);margin:0}
 .photo{background:var(--dark)}
+.photo .wrap{padding-inline:0}
 .photo img{width:100%;height:auto}
 .sec{padding-block:var(--sec)}
 .sec h2{font-size:clamp(2rem,4vw,3.125rem);margin-bottom:1rem}
@@ -112,7 +113,7 @@ form .btn{width:100%;margin-top:.25rem}
 .foot .wrap{display:grid;gap:1.25rem}
 .foot img{height:60px;width:auto}
 .foot p{margin:0;max-width:52rem}
-@media(min-width:700px){.row{grid-template-columns:1fr 1fr}.cols{grid-template-columns:repeat(3,1fr)}.team{grid-template-columns:repeat(3,1fr);gap:2rem 1.5rem}.card{padding:2.25rem 2rem}.top img{height:64px}}
+@media(min-width:700px){.photo{padding-bottom:var(--sec)}.photo .wrap{padding-inline:var(--pad)}.row{grid-template-columns:1fr 1fr}.cols{grid-template-columns:repeat(3,1fr)}.team{grid-template-columns:repeat(3,1fr);gap:2rem 1.5rem}.card{padding:2.25rem 2rem}.top img{height:64px}}
 @media(min-width:1000px){.hero{padding-top:3.5rem}.hero__grid{grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:start}.team{grid-template-columns:repeat(5,1fr)}}
 """
 
@@ -175,7 +176,7 @@ def page():
             '<p class="label">%s</p><h1>%s</h1><p class="hero__sub">%s</p><ul class="points">%s</ul>%s<div class="stat"><p class="k">%s</p><p class="v">%s</p></div></div>'
             '<div class="card"><h2>%s</h2><p>%s</p>%s</div></div></section>\n'
             % (t(c["hero_label"]), t(c["h1"]), t(c["hero_sub"]), points, tel, t(c["stat_label"]), t(c["stat_value"]), t(c["form_title"]), t(c["form_intro"]), form("f1")) +
-            '<section class="photo"><img src="assets/img/hero.jpg" alt="%s" width="1200" height="630"></section>\n' % t(c["photo_alt"]) +
+            '<section class="photo"><div class="wrap"><img src="assets/img/hero.jpg" alt="%s" width="1200" height="630"></div></section>\n' % t(c["photo_alt"]) +
             '<section class="sec pale"><div class="wrap"><p class="label">%s</p><h2>%s</h2><p class="intro">%s</p><div class="cols">%s</div></div></section>\n'
             % (t(c["offences_label"]), t(c["offences_title"]), t(c["offences_intro"]), offences) +
             '<section class="sec charc"><div class="wrap"><p class="label">%s</p><h2>%s</h2><div class="cols" style="margin-top:2.5rem">%s</div></div></section>\n'
