@@ -113,7 +113,8 @@ form .btn{width:100%;margin-top:.25rem}
 .foot .wrap{display:grid;gap:1.25rem}
 .foot img{height:60px;width:auto}
 .foot p{margin:0;max-width:52rem}
-.callbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:1rem;padding-bottom:calc(1rem + env(safe-area-inset-bottom));background:var(--gold);color:var(--dark);font-family:var(--sans);font-weight:600;font-size:1rem;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:1rem;padding-bottom:calc(1rem + env(safe-area-inset-bottom));background:var(--gold);color:var(--dark);font-family:var(--sans);font-weight:600;font-size:1rem;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transform:translateY(100%);visibility:hidden;transition:transform .25s ease,visibility .25s}
+.callbar.on{transform:none;visibility:visible}
 body{padding-bottom:3.4rem}
 body:has(form :is(input,textarea):focus) .callbar{display:none}
 @media(min-width:700px){.photo{padding-bottom:var(--sec)}.photo .wrap{padding-inline:var(--pad)}.row{grid-template-columns:1fr 1fr}.cols{grid-template-columns:repeat(3,1fr)}.team{grid-template-columns:repeat(3,1fr);gap:2rem 1.5rem}.card{padding:2.25rem 2rem}.top img{height:64px}.callbar{display:none}body{padding-bottom:0}}
@@ -139,8 +140,11 @@ def page():
         people.append('<div class="person"><div class="ph">%s</div><p class="nm">%s</p><p class="rl">%s</p></div>'
                       % (ph, t(p["name"]), t(p["role"])))
     tel = '<a class="btn" href="tel:%s">Call %s</a>' % (c["phone_tel"], t(c["phone_display"]))
-    tel_gold = tel.replace('class="btn"', 'class="btn btn--gold"')
+    tel_gold = tel.replace('class="btn"', 'class="btn btn--gold" id="hc"')
     callbar = '<a class="callbar" href="tel:%s">Call %s</a>\n' % (c["phone_tel"], t(c["phone_display"]))
+    callbar += ("<script>(function(){var b=document.querySelector('.callbar'),h=document.getElementById('hc');"
+                "if(!b||!h||!('IntersectionObserver' in window)){if(b)b.classList.add('on');return;}"
+                "new IntersectionObserver(function(e){var r=e[0];b.classList.toggle('on',!r.isIntersecting&&r.boundingClientRect.top<0);}).observe(h);})();</script>\n")
 
     def form(fid):
         return ('<form method="post" action="/submit.php" id="%s">'
