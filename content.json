@@ -9,21 +9,22 @@
   "phone_tel": "+14032648484",
   "address": "#1800, 736 – 6th Avenue SW, Calgary, AB T2P 3T7",
   "title": "Criminal Defence Lawyers in Calgary | Ross Lutz Dunn & Deshaye LLP",
-  "description": "Charged with a criminal offence in Calgary? Ross Lutz Dunn & Deshaye LLP defends sexual assault, domestic assault and fraud charges. Request a confidential consultation.",
+  "description": "Charged with a criminal offence in Calgary? Ross Lutz Dunn & Deshaye LLP defends sexual assault, domestic assault and fraud charges. Request a free, confidential consultation.",
   "social_title": "Criminal Defence Lawyers in Calgary",
-  "social_description": "Ross Lutz Dunn & Deshaye LLP. Request a confidential consultation.",
+  "social_description": "Ross Lutz Dunn & Deshaye LLP. Request a free, confidential consultation.",
   "hero_label": "Calgary Criminal Defence",
   "h1": "Criminal Defence Lawyers in Calgary",
   "stat_label": "Courtroom Experience",
   "stat_value": "170+ Years",
   "hero_sub": "Ross Lutz Dunn & Deshaye LLP defends people charged with criminal offences in Calgary and across Alberta, including sexual assault, domestic assault and fraud.",
   "hero_points": [
+    "Free initial consultation",
     "Eight criminal defence lawyers",
     "Two King's Counsel",
     "Trial and appeal counsel"
   ],
-  "form_title": "Request a Confidential Consultation",
-  "form_intro": "Tell us briefly what has happened. If your matter is urgent, such as a detention, a bail hearing or an upcoming court date, say so at the start.",
+  "form_title": "Request a Free Consultation",
+  "form_intro": "Your consultation is free and confidential. Tell us briefly what has happened. If your matter is urgent, such as a detention, a bail hearing or an upcoming court date, say so at the start.",
   "form_button": "Send My Request",
   "consent": "I understand that sending this form does not create a lawyer-client relationship.",
   "form_fine": "All inquiries are treated as confidential. Please do not include details you would not want read by someone other than a lawyer at our firm.",
@@ -53,7 +54,7 @@
       "body": "Call or send the form. Tell us right away if someone is in custody or a court date is close."
     },
     {
-      "title": "Confidential consultation",
+      "title": "Free, confidential consultation",
       "body": "You speak with a criminal defence lawyer about the charge, the release conditions and what has happened so far."
     },
     {
@@ -112,7 +113,7 @@
     }
   ],
   "cta_title": "Speak With a Criminal Defence Lawyer",
-  "cta_body": "Consultations are confidential. Call us, or send the form and we will be in touch.",
+  "cta_body": "Consultations are free and confidential. Call us, or send the form and we will be in touch.",
   "footer_disclaimer": "The information on this page does not constitute legal advice. Contacting the firm or sending information through this page does not create a lawyer-client relationship.",
   "thanks_title": "Thank you. Your request has been received.",
   "thanks_body": "A member of our team will review your message and be in touch shortly.",
