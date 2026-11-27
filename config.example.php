@@ -29,3 +29,7 @@ define('MAIL_FROM', 'Ross Lutz Dunn & Deshaye LLP <landing@mg.rldd.ca>');
 
 // Where lead notifications go — the client's intake inbox.
 define('MAIL_TO', 'PASTE_LEAD_RECIPIENT_INBOX_HERE');
+
+// Optional, temporary: a blind copy for ICONA while a campaign is being set up.
+// Leave this line out (or delete it) once the campaign is live.
+// define('MAIL_BCC', 'someone@icona.ca');

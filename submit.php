@@ -125,12 +125,16 @@ $html_body = '<!doctype html><html><body style="font-family:Arial,Helvetica,sans
     . '<tr><td style="background:#f2f5f7;"><strong>Submitted</strong></td><td>' . $e($submitted_at) . '</td></tr>'
     . '</table><p style="color:#666;font-size:12px;margin-top:20px;">IP: ' . $e($ip) . '</p></body></html>';
 
-$post_fields = http_build_query([
+$lp_mail = [
     'from' => MAIL_FROM, 'to' => MAIL_TO, 'subject' => $subject,
     'text' => $text_body, 'html' => $html_body,
     'h:Reply-To' => $email, 'h:X-Managed-By' => 'ICONA — ads@icona.ca',
     'o:tag' => 'rldd-lp',
-]);
+];
+// Optional temporary copy for ICONA during setup. Remove MAIL_BCC from private/config.php once live:
+// lead messages can be privileged and belong only in the firm's inbox.
+if (defined('MAIL_BCC') && filter_var(MAIL_BCC, FILTER_VALIDATE_EMAIL)) { $lp_mail['bcc'] = MAIL_BCC; }
+$post_fields = http_build_query($lp_mail);
 $ch = curl_init();
 curl_setopt_array($ch, [
     CURLOPT_URL => MAILGUN_API_BASE . '/messages', CURLOPT_POST => true,
