@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Bake the landing page and thank-you page from content.json.
-  python3 build.py              -> no tracking snippet
-  python3 build.py GTM-XXXXXXX  -> adds the GTM container to both pages
+  python3 build.py              -> uses the "gtm" container ID in content.json (none = no tracking snippet)
+  python3 build.py GTM-XXXXXXX  -> overrides it for this build
 Copy edits go in content.json, never in the HTML.
 """
 import html
@@ -11,7 +11,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 C = json.load(open(os.path.join(ROOT, "content.json"), encoding="utf-8"))
-GTM = sys.argv[1] if len(sys.argv) > 1 else ""
+GTM = sys.argv[1] if len(sys.argv) > 1 else C.get("gtm", "")
 FONTS = "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap"
 
 
