@@ -1,8 +1,8 @@
-# RLDD landing pages (rldd.icona.ca for now; lp.rldd.ca once the firm's IT adds the DNS record)
+# RLDD landing pages (lp.rldd.ca)
 
 - Client: Ross Lutz Dunn & Deshaye LLP, Calgary criminal defence. Main site rldd.ca (Silverstripe 6.2, GTM-N6P25NPZ — do not touch).
 - Follow the icona-landing-page skill. Language en-CA. Not Quebec.
-- Hosting: Plesk on Bertha (bertha.icona.ca), subdomain rldd.icona.ca. Repo root = web root. Moving to lp.rldd.ca later: change "domain" in content.json, rebuild, add the new hostname in Plesk.
+- Hosting: Plesk on Bertha (bertha.icona.ca), site lp.rldd.ca (first set up as rldd.icona.ca on 26 Nov 2026). Repo root = web root. Private config: ../private/config.php.
 - GTM: dedicated container for lp.rldd.ca — ID TBD. Build with `python3 build.py GTM-XXXXXXX`.
 - Mailgun sending domain: mg.rldd.ca. Real key lives in ../private/config.php on the server, never in Git.
 - Lead inbox: TBD (client to confirm). Never CC ICONA on live leads.
@@ -12,3 +12,4 @@
 - Copy rules: no "specialist", "expert", "best", outcome promises, "free consultation", "24/7", "170+ years",
   "most reported decisions" or testimonials without the client's written OK.
 - _ref/ holds reference copies of rldd.ca (not deployed, gitignored). Never deploy without Dave's OK.
+- Form spam checks (submit.php): hidden trap field lp_ref_k7, page-open timer lp_t (set by the page script), 10-digit phone, no links in name/message, 5 requests/hour per IP. Every rejection shows a visible message and is written to the PHP error log; nothing is dropped silently.

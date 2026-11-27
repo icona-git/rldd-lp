@@ -141,11 +141,11 @@ def page():
         return ('<form method="post" action="/submit.php" id="%s">'
                 '<input type="hidden" name="region" value="%s">'
                 '<input type="hidden" name="utm_source"><input type="hidden" name="utm_medium">'
-                '<input type="hidden" name="utm_campaign"><input type="hidden" name="gclid">'
+                '<input type="hidden" name="utm_campaign"><input type="hidden" name="gclid"><input type="hidden" name="lp_t">'
                 '<div class="hp" aria-hidden="true"><input type="text" name="lp_ref_k7" value="" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore data-form-type="other"></div>'
                 '<div><label for="%s-name">Name</label><input type="text" id="%s-name" name="name" required autocomplete="name"></div>'
                 '<div class="row"><div><label for="%s-email">Email</label><input type="email" id="%s-email" name="email" required autocomplete="email"></div>'
-                '<div><label for="%s-phone">Phone</label><input type="tel" id="%s-phone" name="phone" required autocomplete="tel"></div></div>'
+                '<div><label for="%s-phone">Phone</label><input type="tel" id="%s-phone" name="phone" required autocomplete="tel" inputmode="tel" placeholder="403-555-0123"></div></div>'
                 '<div><label for="%s-message">How can we help?</label><textarea id="%s-message" name="message"></textarea></div>'
                 '<label class="check"><input type="checkbox" name="consent" value="1" required><span>%s</span></label>'
                 '<button class="btn btn--gold" type="submit">%s</button>'
@@ -189,7 +189,7 @@ def page():
             '<p>%s<br>%s · <a href="tel:%s">%s</a></p><p>%s</p></div></footer>\n'
             % (t(c["firm"]), t(c["firm"]), t(c["address"]), c["phone_tel"], t(c["phone_display"]), t(c["footer_disclaimer"])) +
             "<script>(function(){var p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','gclid'].forEach(function(k){"
-            "var v=p.get(k);if(!v)return;document.querySelectorAll('input[name=\"'+k+'\"]').forEach(function(i){i.value=v;});});})();</script>\n"
+            "var v=p.get(k);if(!v)return;document.querySelectorAll('input[name=\"'+k+'\"]').forEach(function(i){i.value=v;});});document.querySelectorAll('form').forEach(function(f){var ph=f.querySelector('input[name=\"phone\"]'),t=f.querySelector('input[name=\"lp_t\"]');function chk(){var d=ph.value.replace(/\\D/g,'');if(d.length===11&&d.charAt(0)==='1')d=d.slice(1);ph.setCustomValidity(/^[2-9][0-9]{2}[2-9][0-9]{6}$/.test(d)?'':'Please enter a 10-digit phone number, including area code.');}['input','change','blur'].forEach(function(e){ph.addEventListener(e,chk);});f.querySelector('button').addEventListener('click',chk);f.addEventListener('submit',function(){if(t)t.value=Math.round(performance.now());});});})();</script>\n"
             "</body>\n</html>\n")
 
 
