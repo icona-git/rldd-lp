@@ -113,7 +113,10 @@ form .btn{width:100%;margin-top:.25rem}
 .foot .wrap{display:grid;gap:1.25rem}
 .foot img{height:60px;width:auto}
 .foot p{margin:0;max-width:52rem}
-@media(min-width:700px){.photo{padding-bottom:var(--sec)}.photo .wrap{padding-inline:var(--pad)}.row{grid-template-columns:1fr 1fr}.cols{grid-template-columns:repeat(3,1fr)}.team{grid-template-columns:repeat(3,1fr);gap:2rem 1.5rem}.card{padding:2.25rem 2rem}.top img{height:64px}}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:1rem;padding-bottom:calc(1rem + env(safe-area-inset-bottom));background:var(--gold);color:var(--dark);font-family:var(--sans);font-weight:600;font-size:1rem;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+body{padding-bottom:3.4rem}
+body:has(form :is(input,textarea):focus) .callbar{display:none}
+@media(min-width:700px){.photo{padding-bottom:var(--sec)}.photo .wrap{padding-inline:var(--pad)}.row{grid-template-columns:1fr 1fr}.cols{grid-template-columns:repeat(3,1fr)}.team{grid-template-columns:repeat(3,1fr);gap:2rem 1.5rem}.card{padding:2.25rem 2rem}.top img{height:64px}.callbar{display:none}body{padding-bottom:0}}
 @media(min-width:1000px){.hero{padding-top:3.5rem}.hero__grid{grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:start}.team{grid-template-columns:repeat(5,1fr)}}
 """
 
@@ -136,6 +139,8 @@ def page():
         people.append('<div class="person"><div class="ph">%s</div><p class="nm">%s</p><p class="rl">%s</p></div>'
                       % (ph, t(p["name"]), t(p["role"])))
     tel = '<a class="btn" href="tel:%s">Call %s</a>' % (c["phone_tel"], t(c["phone_display"]))
+    tel_gold = tel.replace('class="btn"', 'class="btn btn--gold"')
+    callbar = '<a class="callbar" href="tel:%s">Call %s</a>\n' % (c["phone_tel"], t(c["phone_display"]))
 
     def form(fid):
         return ('<form method="post" action="/submit.php" id="%s">'
@@ -175,7 +180,7 @@ def page():
             '<main>\n<section class="hero"><div class="wrap hero__grid"><div>'
             '<p class="label">%s</p><h1>%s</h1><p class="hero__sub">%s</p><ul class="points">%s</ul>%s<div class="stat"><p class="k">%s</p><p class="v">%s</p></div></div>'
             '<div class="card"><h2>%s</h2><p>%s</p>%s</div></div></section>\n'
-            % (t(c["hero_label"]), t(c["h1"]), t(c["hero_sub"]), points, tel, t(c["stat_label"]), t(c["stat_value"]), t(c["form_title"]), t(c["form_intro"]), form("f1")) +
+            % (t(c["hero_label"]), t(c["h1"]), t(c["hero_sub"]), points, tel_gold, t(c["stat_label"]), t(c["stat_value"]), t(c["form_title"]), t(c["form_intro"]), form("f1")) +
             '<section class="photo"><div class="wrap"><img src="assets/img/hero.jpg" alt="%s" width="1200" height="630"></div></section>\n' % t(c["photo_alt"]) +
             '<section class="sec pale"><div class="wrap"><p class="label">%s</p><h2>%s</h2><p class="intro">%s</p><div class="cols">%s</div></div></section>\n'
             % (t(c["offences_label"]), t(c["offences_title"]), t(c["offences_intro"]), offences) +
@@ -188,6 +193,7 @@ def page():
             '</main>\n<footer class="foot"><div class="wrap"><img src="assets/img/logo-dark.svg" alt="%s" width="175" height="84">'
             '<p>%s<br>%s · <a href="tel:%s">%s</a></p><p>%s</p></div></footer>\n'
             % (t(c["firm"]), t(c["firm"]), t(c["address"]), c["phone_tel"], t(c["phone_display"]), t(c["footer_disclaimer"])) +
+            callbar +
             "<script>(function(){var p=new URLSearchParams(location.search);['utm_source','utm_medium','utm_campaign','gclid'].forEach(function(k){"
             "var v=p.get(k);if(!v)return;document.querySelectorAll('input[name=\"'+k+'\"]').forEach(function(i){i.value=v;});});document.querySelectorAll('form').forEach(function(f){var ph=f.querySelector('input[name=\"phone\"]'),t=f.querySelector('input[name=\"lp_t\"]');function chk(){var d=ph.value.replace(/\\D/g,'');if(d.length===11&&d.charAt(0)==='1')d=d.slice(1);ph.setCustomValidity(/^[2-9][0-9]{2}[2-9][0-9]{6}$/.test(d)?'':'Please enter a 10-digit phone number, including area code.');}['input','change','blur'].forEach(function(e){ph.addEventListener(e,chk);});f.querySelector('button').addEventListener('click',chk);f.addEventListener('submit',function(){if(t)t.value=Math.round(performance.now());});});})();</script>\n"
             "</body>\n</html>\n")
